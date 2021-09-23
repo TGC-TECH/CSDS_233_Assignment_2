@@ -1,7 +1,18 @@
 import java.util.Stack;
+
 public class CustomSQueue {
     private Stack<Integer> st1 = new Stack<>();
     private Stack<Integer> st2 = new Stack<>();
+
+
+    public CustomSQueue(){
+
+    }
+
+    public CustomSQueue(Stack s1, Stack s2){
+        st1 = s1;
+        st2 =s2;
+    }
 
    public void add(Integer i){
       while(st1.isEmpty() == false){
