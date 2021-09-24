@@ -36,6 +36,10 @@ public class CustomQStack
         return t;
     }
 
+    public String toString(){
+        return " " +que;
+    }
+
 
 
 

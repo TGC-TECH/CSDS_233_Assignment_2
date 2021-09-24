@@ -5,7 +5,7 @@ public class LLreverse {
     private int length = 0;
 
 
-    public class Node {
+    private class Node {
 
         private int data;
         private Node next;
@@ -30,15 +30,16 @@ public class LLreverse {
     }
 
     public void add(int i) {
-        Node node = new Node(i);
+        Node toadd = new Node(i);
         Node current = head;
         while (current != null) {
             if (current.next == null) {
-                current.next = node;
+                current.next = toadd;
+                length++;
                 break;
             }
             current = current.next;
-            length++;
+
         } }
 
     public int size(){
@@ -57,28 +58,26 @@ public class LLreverse {
 
 
     public void reverse() {
-        //this.head = head;
-        Node pointer = head;
+        Node node = head;
         Node previous = null, current = null;
 
-        while (pointer != null) {
-            current = pointer;
-            pointer = pointer.next;
+        while (node != null) {
+            current = node;
+            node = node.next;
 
-            // reverse the link
+            // reverse the pointers
             current.next = previous;
             previous = current;
             head = current;
         }
 
-        //return mylist;
         }
 
         public String toString(){
         String toretun = "[ ";
         Node current = head;
         while(current != null){
-            toretun = toretun + ", " + current.data();
+            toretun = toretun  + current.data() + ", ";
             current = current.next();
         }
         toretun = toretun + " ]";

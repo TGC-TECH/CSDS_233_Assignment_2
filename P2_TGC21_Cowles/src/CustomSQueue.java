@@ -9,28 +9,38 @@ public class CustomSQueue {
 
     }
 
-    public CustomSQueue(Stack s1, Stack s2){
+    public CustomSQueue(Stack s1){
         st1 = s1;
-        st2 =s2;
+
+        //st2 =s2;
     }
 
+
+
    public void add(Integer i){
-      while(st1.isEmpty() == false){
-          //copy st1 to st2
-          st2.push(st1.pop());
-      }
-      st1.push(i); //add item to the bottom of stack
+     st1.push(i);
+
+   }
+
+   public Integer poll(){
+        Integer toreturn;
+       while(st1.isEmpty() == false){
+           //copy st1 to st2
+           st2.push(st1.pop());
+           //length++;
+       }
+       toreturn = st2.pop(); //add item to the bottom of stack
 
        while(st2.isEmpty() == false){
            //copy st2 back into st1
            st1.push(st2.pop());
        }
 
+        return toreturn;
    }
 
-   public Integer poll(){
-      return st1.pop();
-   }
-
+   public String toString() {
+        return " " + st1;
+    }
 
 }
