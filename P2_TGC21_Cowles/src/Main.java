@@ -1,16 +1,18 @@
 
-import java.util.LinkedList;
-
 public class Main {
 
 
 
     public static void main(String[] args) {
         //testing linked list reverse
-        LLreverse lstrev = new LLreverse();
-        LinkedList<Integer> testlist = new LinkedList<Integer>(); //uses integer object
+        LLreverse mylist = new LLreverse(1); //creates a new linked list with starting value i
 
-        System.out.println(lstrev.reverse(testlist));
+        for(int i = 2; i < 26; i++) {
+            mylist.add(i); }
+            System.out.println(mylist);
+            mylist.reverse();
+        System.out.println(mylist);
+
 
 
 
